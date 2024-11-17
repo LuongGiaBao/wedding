@@ -9,8 +9,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        primary: '#b08d82', // Màu chính trong ảnh
+        secondary: '#f8f8f8',
+      },
+      fontFamily: {
+        script: ['"Dancing Script"', 'cursive'], // Font giống như trên ảnh
+        sans: ['"Poppins"', 'sans-serif'],
       },
     },
   },

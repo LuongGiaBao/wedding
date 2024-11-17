@@ -45,7 +45,7 @@ export const BannerComponent = () => {
           Gia Bảo ♡ Kim Ngân
         </h1>
         <p className="text-sm md:text-lg text-gray-200 mt-2">
-          ---- 01 tháng 1 2025 ----
+          ---- 01 tháng 1 2026 ----
         </p>
       </div>
     </div>

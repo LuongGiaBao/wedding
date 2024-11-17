@@ -1,15 +1,15 @@
+"use client";
 import React, { useEffect } from "react";
 
 const SnowfallComponent = () => {
   useEffect(() => {
     // Tạo các bông tuyết
     const snowflakes: HTMLElement[] = [];
-    const numFlakes = 100;
+    const numFlakes = 50;
 
     for (let i = 0; i < numFlakes; i++) {
       const snowflake = document.createElement("div");
       snowflake.className = "snowflake";
-      snowflake.style.position = "absolute";
       snowflake.style.top = `${Math.random() * -100}px`;
       snowflake.style.left = `${Math.random() * window.innerWidth}px`;
       snowflake.style.animationDuration = `${Math.random() * 10 + 5}s`;
@@ -20,13 +20,13 @@ const SnowfallComponent = () => {
       snowflake.style.borderRadius = "50%";
       snowflake.style.opacity = "0.8";
       snowflake.style.animationName = "fall";
-      snowflake.style.pointerEvents = "none"; // Đảm bảo tuyết không tương tác với các phần tử khác
+
       document.body.appendChild(snowflake);
       snowflakes.push(snowflake);
     }
 
     return () => {
-      snowflakes.forEach(snowflake => {
+      snowflakes.forEach((snowflake) => {
         snowflake.remove();
       });
     };
