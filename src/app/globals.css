@@ -2,20 +2,63 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Add your existing global styles above this */
+/* html,
+body {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden; 
+} */
+.snowfall {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999; /* Snowfall should appear above all other elements */
+  overflow: hidden;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.snowflake {
+  position: ; /* Đảm bảo bông tuyết ở vị trí cố định trên toàn trang */
+  top: -10px;
+  background-color: white;
+  border-radius: 50%;
+  opacity: 0.8;
+  animation: fall 10s linear infinite, sway 3s ease-in-out infinite;
+  z-index: 9999; /* Đảm bảo tuyết luôn ở trên các thành phần khác */
+}
+
+/* Snowflake random size */
+.snowflake::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  transform: scale(calc(0.5 + 0.5 * random()));
+}
+
+/* Hiệu ứng rơi */
+@keyframes fall {
+  0% {
+    top: -10px;
+    transform: translateX(0);
+  }
+  100% {
+    top: 100vh;
+    transform: translateX(calc(-50px + 100px * random()));
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+/* Hiệu ứng lắc */
+@keyframes sway {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
 }
