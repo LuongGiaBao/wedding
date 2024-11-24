@@ -10,13 +10,19 @@ import "swiper/css/pagination";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
 export const BannerComponent = () => {
-  const banners = ["/assests/8.png", "/assests/8.png"]; // Đường dẫn ảnh banner
+  const banners = [
+    "/assests/8.png",
+    "/assests/8.png",
+    "/assests/8.png",
+    "/assests/8.png",
+    "/assests/8.png",
+  ]; // Đường dẫn ảnh banner
 
   return (
     <div className="relative w-full h-full">
       <Swiper
         spaceBetween={10}
-        navigation={false}
+        navigation={true}
         pagination={{
           clickable: true,
         }}
